@@ -11,7 +11,7 @@ Include the **include** tag in your file where you want the scripts to be includ
 </head>
 ```
 
-And they will be replaces with script refrences to all files defined in the config.
+And they will be replaces with script references to all files defined in the config.
 
 ```html
 <head>
@@ -29,7 +29,7 @@ And they will be replaces with script refrences to all files defined in the conf
 ## Getting Started
 This plugin requires Grunt `~0.4.2`
 
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plug-ins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
 npm install grunt-scriptincluder --save-dev
@@ -69,7 +69,7 @@ grunt.initConfig({
 Type: `String`
 Default value: `''`
 
-A string used to prepend to the included scripts src.
+A string used to perpend to the included scripts src.
 
 ```js
   options.rootPath + filePath
