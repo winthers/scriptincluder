@@ -49,6 +49,7 @@ In your project's Gruntfile, add a section named `scriptincluder` to the data ob
 ```js
 grunt.initConfig({
   scriptincluder: {
+    task: {
       options: {
         rootPath: "../",
       },
@@ -57,7 +58,8 @@ grunt.initConfig({
         "src/app.js",
         "src/apps/**/*.js"
       ]
-  },
+    }
+  }
 });
 ```
 
