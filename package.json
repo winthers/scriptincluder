@@ -1,7 +1,7 @@
 {
   "name": "grunt-scriptincluder",
   "description": "\"inserts script refrences in to your files\"",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/mbw/scriptincluder",
   "author": "Martin b. winther <martinbrokwinther@gmail.com>",
   "repository": {
