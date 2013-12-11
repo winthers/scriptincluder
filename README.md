@@ -1,5 +1,5 @@
 # grunt-scriptIncluder
-> "inserts script refrences in to your files"
+> "inserts script references in to your files"
 
 ##Example
 
@@ -105,7 +105,7 @@ grunt.initConfig({
 ```
 
 #### Linked refrences
-You can link to other files defined in the grunt config, this is helpfule if you already have defined script files in a other tasks configuration, e.g. the concat task.
+You can link to other files defined in the grunt config, this is helpful if you already have defined script files in a other tasks configuration, e.g. the concat task.
 
 
 ```js
