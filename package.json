@@ -3,10 +3,7 @@
   "description": "\"inserts script refrences in to your files\"",
   "version": "0.1.0",
   "homepage": "https://github.com/mbw/scriptincluder",
-  "author": {
-    "name": "Martin b. winther",
-    "email": "martinbrokwinther@gmail.com"
-  },
+  "author": "Martin b. winther <martinbrokwinther@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/winthers/scriptincluder.git"
@@ -38,5 +35,18 @@
   },
   "keywords": [
     "gruntplugin"
-  ]
+  ],
+  "gitHead": "c7522e058afe11161005cb39ea488d850d520241",
+  "readmeFilename": "README.md",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.6.5",
+    "grunt-contrib-nodeunit": "~0.2.2",
+    "grunt-contrib-clean": "~0.4.1",
+    "underscore": "~1.5.2"
+  },
+  "license": "MIT"
 }
