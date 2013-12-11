@@ -52,7 +52,7 @@ grunt.initConfig({
       options: {
         rootPath: "../",
       },
-      dest: "public/index.txt",
+      dest: "public/index.html",
       src: [
         "src/app.js",
         "src/apps/**/*.js"
@@ -79,27 +79,22 @@ A string used to prepend to the included scripts src.
 #### Default Options
 
 
-In this example, the scripts defined under each task (index_html/someotherfile_html) will be included in the tasks dest file.
+In this example, the scripts defined under page1 will be included in the tasks dest file.
 
 ```js
 grunt.initConfig({
   scriptincluder: {
-     index_html: {
+     page1: {
         options: {
           rootPath: "../",
         },
-        dest: "public/index.txt",
+        dest: "public/page1.html",
         src: [
           "src/app.js",
           "src/apps/**/*.js"
         ]
-      },
-      someotherfile_html: {
-        dest: "public/foobar.html",
-        src: {
-          "src/foobar/**/*.js"
-        }
       }
+      
   },
 });
 ```
@@ -127,6 +122,7 @@ grunt.initConfig({
 ```
 
 #### Complete config
+
 
 ```js
 grunt.initConfig({
