@@ -158,3 +158,5 @@ grunt.initConfig({
 
 ## Release History
  * 2013-12-11   v0.1.0   Initial release
+ * 2013-12-11   v0.1.1   Readme fix
+ * 2013-12-11   v0.1.2   Readme fix
