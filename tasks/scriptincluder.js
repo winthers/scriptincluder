@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
 	var _ = require("underscore");
 	
-	grunt.registerMultiTask('scriptincluder', '"inserts script refrences in to your files"', function() {
+  grunt.registerMultiTask('scriptincluder', '"inserts script refrences in to your files"', function() {
 		var fileContent	= "";
 		var filePath = this.data.dest;
 		var options = this.options({rootPath: ""});
@@ -51,33 +51,34 @@ module.exports = function(grunt) {
 		}
   })
 
-  	/** @internal class */
-	function ScriptTagBuilder (rootPath) {
+  /** @internal class */
+  function ScriptTagBuilder (rootPath) {
 
-		this.create = function (files) {
-		  return  createScriptIncludeHeader() 	+ 
+    this.create = function (files) {
+      return  createScriptIncludeHeader() 	+ 
               createScriptIncludeBody(files) 	+
-		   			  createScriptIncludeFotter();
-		}
+              createScriptIncludeFotter();
+    }
 
-		var createScriptIncludeHeader = function() {
-			return "\t<!-- Generated Script includes -->\n";
-		}
+    var createScriptIncludeHeader = function() {
+      return "\t<!-- Generated Script includes -->\n";
+    }
 
-		var createScriptIncludeBody = function(files) {
-    	var scriptTags = "";
-    	console.log("creating includes")
-    	files.forEach(function(file){
+    var createScriptIncludeBody = function(files) {
+      var scriptTags = "";
 
-    		console.log("\t", rootPath + file)
-    		scriptTags += "\t<script src='" + rootPath + file + "'></script>\n";
-    	});
-    	return scriptTags;
-		}
+      console.log("creating includes")
+      files.forEach(function(file){
+        console.log("\t", rootPath + file)
+        scriptTags += "\t<script src='" + rootPath + file + "'></script>\n";
+      });
+      
+      return scriptTags;
+    }
 
-		var createScriptIncludeFotter = function() {
-			return "\t<!-- /Generated Script includes -->\n";
-		}
-	}
+    var createScriptIncludeFotter = function() {
+      return "\t<!-- /Generated Script includes -->\n";
+    }
+  }
 
 };
