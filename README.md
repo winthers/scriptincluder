@@ -65,7 +65,7 @@ grunt.initConfig({
 
 #### options.rootPath
 Type: `String`
-Default value: `',  '`
+Default value: `''`
 
 A string used to prepend to the included scripts src.
 
