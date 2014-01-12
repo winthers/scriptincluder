@@ -51,7 +51,7 @@ grunt.initConfig({
   scriptincluder: {
     task: {
       options: {
-        rootPath: "../",
+        prependedPath: "../",
       },
       dest: "public/index.html",
       src: [
@@ -65,15 +65,28 @@ grunt.initConfig({
 
 ### Options
 
-#### options.rootPath
+#### options.prependedPath
 Type: `String`
 Default value: `''`
 
 A string used to perpend to the included scripts src.
 
 ```js
-  options.rootPath + filePath
+  options.prependedPath + filePath
 ```
+
+
+#### options.replacePath
+
+Type: `String`
+Default value: `''`
+
+Used to replace the path of the file.
+
+```js
+  options.replacePath + fileName
+```
+
 
 
 ### Usage Examples
@@ -88,7 +101,7 @@ grunt.initConfig({
   scriptincluder: {
      page1: {
         options: {
-          rootPath: "../",
+          prependedPath: "../",
         },
         dest: "public/page1.html",
         src: [
@@ -110,7 +123,7 @@ grunt.initConfig({
   scriptincluder: {
    index: {
         options: {
-          rootPath: "../",
+          prependedPath: "../",
         },
         dest: "public/index.txt",
         src: [
@@ -123,6 +136,38 @@ grunt.initConfig({
 });
 ```
 
+#### Replaced path
+You can link to other files defined in the grunt config, this is helpful if you already have defined script files in a other tasks configuration, e.g. the concat task.
+
+
+```js
+grunt.initConfig({
+  scriptincluder: {
+   index: {
+        options: {
+          replacePath: "foobar/",
+        },
+        dest: "public/index.txt",
+        src: [
+          "js/file1.js",
+          "js/file2.js",
+          "js/file3.js",
+        ]
+      },
+  }
+});
+```
+
+**output**
+
+```html
+  <script src='foobar/script1.js'></script>
+  <script src='foobar/script2.js'></script>
+  <script src='foobar/script3.js'></script>
+  <script src='foobar/script4.js'></script>
+```
+
+
 #### Complete config
 
 
@@ -131,7 +176,7 @@ grunt.initConfig({
   scriptincluder: {
       page1: {
         options: {
-          rootPath: "../",
+          prependedPath: "../",
         },
         dest: "tmp/page1.html",
         src: [
@@ -160,3 +205,4 @@ grunt.initConfig({
  * 2013-12-11   v0.1.0   Initial release
  * 2013-12-11   v0.1.1   Readme fix
  * 2013-12-11   v0.1.2   Readme fix
+ * 2014-12-01   v.1.0.0  Added replacePath, and renamed basePath to prependedPath.

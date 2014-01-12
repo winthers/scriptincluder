@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       
       page1: {
         options: {
-          rootPath: "../",
+          prependedPath: "../",
         },
         dest: "tmp/page1.html",
         src: [
@@ -55,6 +55,20 @@ module.exports = function(grunt) {
           "<%= scriptincluder.page1.src %>",
           "<%= scriptincluder.page2.src %>"
         ]
+      },
+
+
+      page4: {
+        options: {
+          prependedPath: "",
+          replacePath: "foobar/"
+        },
+        dest: "tmp/page4.html",
+        src: [
+          "<%= scriptincluder.page1.src %>",
+          "<%= scriptincluder.page2.src %>"
+        ]
+
       }
     },
 
@@ -77,6 +91,7 @@ module.exports = function(grunt) {
       {from:"./test/fixtures/page1.html",       to:"./tmp/page1.html"},
       {from:"./test/fixtures/page2.html",       to:"./tmp/page2.html"},
       {from:"./test/fixtures/page3.html",       to:"./tmp/page3.html"},
+      {from:"./test/fixtures/page4.html",       to:"./tmp/page4.html"},
       {from:"./test/fixtures/page1/script1.js", to: "./tmp/scripts/page1/script1.js"},
       {from:"./test/fixtures/page1/script2.js", to: "./tmp/scripts/page1/script2.js"},
       {from:"./test/fixtures/page2/script3.js", to: "./tmp/scripts/page2/script3.js"},
